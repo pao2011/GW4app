@@ -8,9 +8,9 @@ Pensada para disparar macros de **MacroDroid** mediante su URL de webhook.
    (`https://trigger.macrodroid.com/<id-dispositivo>/<identificador>`).
 2. En el reloj abre la app → **+ Añadir** → escribe nombre y URL (teclado del reloj, o dictado) → **Guardar**.
 3. Toca el botón del webhook para enviarlo. Muestra `✓ 200` si salió bien o `✗` si falló.
-4. **Borrar** activa el modo borrado: toca un webhook para eliminarlo.
 
-Soporta GET y POST. El reloj necesita Wi‑Fi, LTE o el móvil emparejado por Bluetooth.
+
+Soporta GET y POST. Toca un webhook para enviarlo (vibra al terminar); mantén pulsado para editarlo o borrarlo.
 
 ## Compilar
 Requiere Android Studio (o Android SDK + JDK 17) y abrir la carpeta como proyecto.
