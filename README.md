@@ -12,12 +12,15 @@ Pensada para disparar macros de **MacroDroid** mediante su URL de webhook.
 
 Soporta GET y POST. Toca un webhook para enviarlo (vibra al terminar); mantén pulsado para editarlo o borrarlo.
 
-## Compilar
-Requiere Android Studio (o Android SDK + JDK 17) y abrir la carpeta como proyecto.
+## Instalar en el reloj (sin compilar)
+Cada push compila el APK con GitHub Actions y lo publica en
+**Releases → "GW4App (última versión)" → `GW4App.apk`**.
 
-```
-gradle :app:assembleDebug        # o ./gradlew si generas el wrapper con `gradle wrapper`
-adb connect <ip-del-reloj>:<puerto>
-adb install app/build/outputs/apk/debug/app-debug.apk
-```
-(Activa Opciones de desarrollador → Depuración por Wi‑Fi en el reloj.)
+Instalación en el Galaxy Watch 4 (no tiene instalador de archivos propio):
+1. Reloj: Ajustes → Acerca del reloj → Software → toca 5 veces "Versión de software" → Opciones de desarrollador → activa **Depuración ADB** y **Depurar por Wi‑Fi**.
+2. Anota la IP y puerto (y el código de emparejamiento si lo pide).
+3. Desde PC: `adb pair <ip>:<puerto-emparejar>` (si pide código), `adb connect <ip>:<puerto>` y `adb install -r GW4App.apk`.
+   Alternativa desde el móvil Android: app **Wear Installer 2** o **Bugjaeger** (elige el APK y se instala por Wi‑Fi).
+
+## Compilar a mano
+Android Studio, o `gradle :app:assembleDebug` con Android SDK y JDK 17.
